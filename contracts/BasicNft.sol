@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: SEE LICENSE IN LICENSE
-pragma solidity 0.8.27;
+pragma solidity 0.8.28;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract BasicNft is ERC721 {
@@ -10,13 +10,13 @@ contract BasicNft is ERC721 {
         s_tokenCount = 0;
     }
 
-    function mintNft(string memory tokenUri) public {
-        s_tokenIdToUri[s_tokenCount] = tokenUri;
+    function mintNft(string memory _tokenUri) public {
+        s_tokenIdToUri[s_tokenCount] = _tokenUri;
         _safeMint(msg.sender, s_tokenCount);
         s_tokenCount++;
     }
 
-    function tokenUri(uint256 tokenId) public returns (string memory) {
+    function tokenUri(uint256 tokenId) public view returns (string memory) {
         return s_tokenIdToUri[tokenId];
     }
 
