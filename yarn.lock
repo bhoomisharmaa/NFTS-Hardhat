@@ -288,6 +288,17 @@
   dependencies:
     "@nomicfoundation/hardhat-utils" "^3.0.0"
 
+"@nomicfoundation/hardhat-ethers-chai-matchers@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@nomicfoundation/hardhat-ethers-chai-matchers/-/hardhat-ethers-chai-matchers-3.0.0.tgz#bf4f660d8e08da6f9cd3ef5d3b27d33251a43072"
+  integrity sha512-IhDOUXv5+7cH1b8X5TX2qr2jLsMPjboFH/jXh7j090PbYWCRGwzdG3Olzzmd1X1WWpkw16nnz91+6pXuLpbQkw==
+  dependencies:
+    "@nomicfoundation/hardhat-errors" "^3.0.0"
+    "@nomicfoundation/hardhat-utils" "^3.0.0"
+    "@types/chai-as-promised" "^8.0.1"
+    chai-as-promised "^8.0.0"
+    deep-eql "^5.0.1"
+
 "@nomicfoundation/hardhat-ethers@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@nomicfoundation/hardhat-ethers/-/hardhat-ethers-4.0.0.tgz#c6c470f4a54c61f68a1ef275e69ebd6132b447e4"
@@ -298,6 +309,13 @@
     debug "^4.3.2"
     ethereum-cryptography "^2.2.1"
     ethers "^6.14.0"
+
+"@nomicfoundation/hardhat-ignition-ethers@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@nomicfoundation/hardhat-ignition-ethers/-/hardhat-ignition-ethers-3.0.0.tgz#a12e355d25f29115d44d654845efda765a323b49"
+  integrity sha512-IF1eqRADe2lvvxnMNvZDhK8R//6XdyG5wW28qILW776VTCYBFJO2WbhU5XVmQzKyvNJ94Hj40LQsrgHwKOaO8Q==
+  dependencies:
+    "@nomicfoundation/hardhat-errors" "^3.0.0"
 
 "@nomicfoundation/hardhat-ignition@^3.0.0":
   version "3.0.0"
@@ -407,6 +425,11 @@
     "@nomicfoundation/solidity-analyzer-linux-x64-gnu" "0.1.2"
     "@nomicfoundation/solidity-analyzer-linux-x64-musl" "0.1.2"
     "@nomicfoundation/solidity-analyzer-win32-x64-msvc" "0.1.2"
+
+"@openzeppelin/contracts@^5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-5.4.0.tgz#177594bdb2d86c71f5d1052fe40cb4edb95fb20f"
+  integrity sha512-eCYgWnLg6WO+X52I16TZt8uEjbtdkgLC0SUX/xnAksjjrQI4Xfn4iBRoI5j55dmlOhDv1Y7BoR3cU7e3WWhC6A==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
@@ -579,6 +602,13 @@ cbor2@^1.9.0:
   resolved "https://registry.yarnpkg.com/cbor2/-/cbor2-1.12.0.tgz#b1cae821ee8d673cff70b078c3f08041bc47bdde"
   integrity sha512-3Cco8XQhi27DogSp9Ri6LYNZLi/TBY/JVnDe+mj06NkBjW/ZYOtekaEU4wZ4xcRMNrFkDv8KNtOAqHyDfz3lYg==
 
+chai-as-promised@^8.0.0:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/chai-as-promised/-/chai-as-promised-8.0.1.tgz#8913b2fd685b3f5637d25f627518e3ac9614d8e1"
+  integrity sha512-OIEJtOL8xxJSH8JJWbIoRjybbzR52iFuDHuF8eb+nTPD6tgXLjRqsgnUGqQfFODxYvq5QdirT0pN9dZ0+Gz6rA==
+  dependencies:
+    check-error "^2.0.0"
+
 chai@^5.1.2:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/chai/-/chai-5.2.1.tgz#a9502462bdc79cf90b4a0953537a9908aa638b47"
@@ -603,7 +633,7 @@ chalk@^5.3.0:
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.5.0.tgz#67ada1df5ca809dc84c9b819d76418ddcf128428"
   integrity sha512-1tm8DTaJhPBG3bIkVeZt1iZM9GfSX2lzOeDVZH9R9ffRHpmHvxZ/QhgQH/aDTkswQVt+YHdXAdS/In/30OjCbg==
 
-check-error@^2.1.1:
+check-error@^2.0.0, check-error@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/check-error/-/check-error-2.1.1.tgz#87eb876ae71ee388fa0471fe423f494be1d96ccc"
   integrity sha512-OAlb+T7V4Op9OwdkjmguYRqncdlx5JiofwOAUkmTF+jNdHwzTaTs4sRAGpzLF3oOz5xAyDGrPgeIDFQmDOTiJw==
