@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: MIT
 pragma solidity 0.8.28;
 import {Test} from "forge-std/Test.sol";
-import {MoodNft} from "./MoodNft.sol";
+import {MoodNft, MoodNft__NotAuthorized, MoodNft__NonExistentToken} from "./MoodNft.sol";
 
 contract MoodNftTest is Test {
     MoodNft private moodNft;
@@ -71,5 +71,43 @@ contract MoodNftTest is Test {
         vm.expectEmit(address(moodNft));
         emit MoodNft.NftMinted(ALICE, 0);
         moodNft.mintNft();
+    }
+
+    // === flipMood() tests ===
+    function testRevertsWhenTokenIdIsInvalid() public {
+        vm.expectRevert(MoodNft__NonExistentToken.selector);
+        moodNft.flipMood(9999);
+    }
+
+    function testRevertsWhenOwnerIsNotTheCaller() public {
+        address Bob = address(0x246);
+        mintForALICE();
+
+        vm.expectRevert(MoodNft__NotAuthorized.selector);
+        vm.prank(Bob);
+
+        moodNft.flipMood(0);
+    }
+
+    function testFlipsTheMood() public {
+        mintForALICE();
+        uint256 prevState = uint256(moodNft.currentNftState(0));
+        vm.prank(ALICE);
+        moodNft.flipMood(0);
+        uint256 currentState = uint256(moodNft.currentNftState(0));
+
+        assertNotEq(
+            prevState,
+            currentState,
+            "Previous state should not be equal to current state after flipping"
+        );
+    }
+
+    function testFlipMoodEmitsEvent() public {
+        mintForALICE();
+        vm.prank(ALICE);
+        vm.expectEmit(address(moodNft));
+        emit MoodNft.MoodFlipped(MoodNft.NftState.SAD, 0);
+        moodNft.flipMood(0);
     }
 }
