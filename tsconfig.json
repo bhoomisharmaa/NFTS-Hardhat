@@ -9,5 +9,8 @@
     "skipLibCheck": true,
     "moduleResolution": "node16",
     "outDir": "dist"
-  }
+  },
+  "exclude": ["dist", "node_modules"],
+  "include": ["./test", "./src", "./scripts"],
+  "files": ["./hardhat.config.ts"]
 }

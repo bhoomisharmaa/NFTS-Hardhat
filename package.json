@@ -22,6 +22,7 @@
     "@types/mocha": ">=10.0.10",
     "@types/node": "^22.8.5",
     "chai": "^5.1.2",
+    "dotenv": "^17.2.1",
     "ethers": "^6.14.0",
     "forge-std": "https://github.com/foundry-rs/forge-std#v1.9.7",
     "hardhat": "^3.0.0",
